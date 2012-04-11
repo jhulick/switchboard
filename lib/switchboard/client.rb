@@ -53,7 +53,9 @@ module Switchboard
     end
 
     def connect!
-      client.connect
+      host = settings["host"]
+      port = settings["port"]
+      client.connect(host, port)
       auth!
     end
 
